@@ -1,0 +1,75 @@
+body{
+    max-width: 325px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+input[type="checkbox"]{
+    height: 15px;
+    width: 15px;
+}
+
+button {
+    border: none;
+    height: 20px;
+}
+
+input[type=checkbox]:checked + span{
+    text-decoration: line-through;
+}
+
+ul {
+    margin-top: 0;
+    padding-left: 0;
+}
+
+ li {
+     list-style-type: none;
+     border-bottom: 2px solid #868686;
+ }
+
+.light_blue {
+    background-color: #099DD9;
+}
+
+.green {
+    background-color: #0C8542;
+}
+
+.red {
+    background-color: #EC1D3B;;
+}
+
+.orange {
+    background-color: #F79420;
+}
+
+.yellow {
+    background-color: #FFDC00;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete {
+    float: left;
+    margin-right: 10px;
+}
+
+.edit {
+    float: right;
+    margin-right: 15px;
+}
+
+.add {
+    margin-left: 15px;
+}
+
