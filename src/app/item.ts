@@ -1,6 +1,8 @@
 export class Item {
     id: number;
     name: string;
-    isChecked: boolean;
+    image: string;
     editing: boolean;
+    isDead: boolean;
+    isAlive: boolean;
 }

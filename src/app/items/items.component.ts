@@ -45,11 +45,12 @@ export class ItemsComponent implements OnInit {
 
   edit(item: Item) : void {
     item.editing = true;
+    item.isAlive = true;
   }
 
-  saveEdit(item: Item) : void {
-    item.editing = false;
-    item.isChecked = false;
+  dead(item: Item) : void {
+    item.isDead = true;
+    item.isAlive = false;
     this.itemService.updateItem(item).subscribe();
   }
 

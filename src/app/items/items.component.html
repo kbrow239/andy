@@ -1,31 +1,27 @@
 <body>
-    <div class="buttons"><button (click)="bcolor = '#ffffff'; border = '2px solid #868686'">White</button>
-      <button class="green" (click)="bcolor = '#0C8542'; border = '2px solid #025D16'">Green</button>
-      <button class="light_blue" (click)="bcolor = '#099DD9'; border = '2px solid #0961D9'">Blue</button>
-      <button class="orange" (click)="bcolor = '#F79420'; border = '2px solid #F77120'">Orange</button>
-      <button class="red" (click)="bcolor = '#EC1D3B'; border = '2px solid #B20C0C'">Red</button>
-      <button class="yellow" (click)="bcolor = '#FFDC00'; border = '2px solid #FFC500'">Yellow</button></div>
-<div class="checklist-wrapper" [ngStyle]="{'color': color, 'background-color': bcolor}">
-    <h2>Things I need:</h2>
-<ul class="items">
-  <li [ngStyle]="{'border-bottom': border}" *ngFor="let item of items" >
-  <input type="checkbox"[(ngModel)]="item.isChecked"> <span class="badge" *ngIf="!item.editing">{{item.name}}
-  <button class="edit" [disabled]="editMode"(click)="edit(item)">Edit</button>
-  </span> 
-  <span class="badge" *ngIf="item.editing"><input [(ngModel)]="item.name" placeholder="name" />
-  <button class="edit" (click)="saveEdit(item)">
-    Update
-  </button></span> 
-  <span class="delete"><button class="delete2" title="delete item"
-  (click)="delete(item)">X</button></span>
+<div class="list-wrapper">
+<h2>Pool:</h2>
+<ul class = "items">
+  <li *ngFor="let item of items">
+    <span class="badge" *ngIf="!item.editing"(click)="edit(item)"><img src={{item.image}}/> <p class=text>{{item.name}}</p>  </span>
+    
   </li>
 </ul>
+</div>
 
-<label> Add Item:
-  <input #itemName />
-  </label>
-  <button class="add" (click)="add(itemName.value); itemName.value=''">
-    Add
-  </button>
-</div> 
+<h2>Alive:</h2>
+<ul class = "items">
+<li *ngFor="let item of items">
+  <span class="badge" *ngIf="item.isAlive"(click)="dead(item)"><img src={{item.image}}/> <p class=text>{{item.name}}</p></span>
+
+</li>
+</ul>
+
+<h2>Dead:</h2>
+<ul class = "items">
+<li *ngFor="let item of items">
+  <span class="badge" *ngIf="item.isDead"><img src={{item.image}}/> <p class=text>{{item.name}}</p></span>
+</li>
+</ul>
 </body>
+

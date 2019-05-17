@@ -1,8 +1,16 @@
 body{
-    max-width: 325px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     font-size: 16px;
+}
+image {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.text {
+    justify-content: center;
 }
 
 input[type="checkbox"]{
@@ -19,15 +27,22 @@ input[type=checkbox]:checked + span{
     text-decoration: line-through;
 }
 
-ul {
+ul.items {
     margin-top: 0;
     padding-left: 0;
+    display: flex;
+    flex-flow: row wrap;
+    
 }
 
  li {
      list-style-type: none;
-     border-bottom: 2px solid #868686;
  }
+
+ p.text {
+    padding-left: 17px;
+    font-size: 20px;
+}
 
 .light_blue {
     background-color: #099DD9;
