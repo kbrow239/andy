@@ -8,20 +8,23 @@
   </li>
 </ul>
 </div>
-
-<h2>Alive:</h2>
+<div class="list-wrapper">
+<h2>Recruited:</h2>
 <ul class = "items">
 <li *ngFor="let item of items">
   <span class="badge" *ngIf="item.isAlive"(click)="dead(item)"><img src={{item.image}}/> <p class=text>{{item.name}}</p></span>
 
 </li>
 </ul>
+</div>
 
-<h2>Dead:</h2>
+<div class="list-wrapper">
+<h2>Graveyard:</h2>
 <ul class = "items">
 <li *ngFor="let item of items">
-  <span class="badge" *ngIf="item.isDead"><img src={{item.image}}/> <p class=text>{{item.name}}</p></span>
+  <span class="badge" *ngIf="item.isDead"><img src={{item.image}} class="dead"/> <p class=text>{{item.name}}</p></span>
 </li>
 </ul>
+</div>
 </body>
 
