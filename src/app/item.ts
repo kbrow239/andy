@@ -4,5 +4,6 @@ export class Item {
     image: string;
     editing: boolean;
     isDead: boolean;
-    isAlive: boolean;
+  isAlive: boolean;
+  isActive: boolean;
 }

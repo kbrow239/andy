@@ -1,15 +1,22 @@
 body{
-    max-width: 1000px;
-    padding: 50px;
+    max-width: 1800px;
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
     font-size: 16px;
     background-color: black;
     color: white;
 }
-image {
-    max-width: 75px;
-    max-height: 75px;
+
+h2 {
+    text-align: center;
+}
+
+img {
+    max-width: 50px;
+    max-height: 50px;
+    justify-content: center;
+    padding-left: 20px;
 }
 
 .text {
@@ -35,6 +42,7 @@ ul.items {
     padding-left: 0;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     
 }
 
@@ -43,15 +51,18 @@ ul.items {
  }
 
  p.text {
-    padding-left: 30px;
     font-size: 20px;
+    text-align: center;
+    padding-left: 20px;
 }
 
 .list-wrapper {
     margin-bottom: 150px;
+    height: 200px;
 }
 
 .dead {
     opacity: 0.6;
     filter: alpha(opacity=60);
 }
+

@@ -14,9 +14,9 @@ import { ItemService } from '../item.service';
 export class ItemsComponent implements OnInit {
 
   items: Item[];
-  bcolor = '#ffffff';
-  color = '#000000';
-  border = '2px solid #868686'
+  deadunits = [];
+  recruited = [];
+  private toggle: boolean = false;
 
   constructor(private itemService: ItemService) { }
 
@@ -43,15 +43,19 @@ export class ItemsComponent implements OnInit {
     this.itemService.deleteItem(item).subscribe();
   }
 
-  edit(item: Item) : void {
+  edit(item: Item): void {
+    item.isActive != item.isActive;
     item.editing = true;
     item.isAlive = true;
+    this.recruited.push(item);
   }
 
-  dead(item: Item) : void {
+  dead(item: Item): void {
+    this.toggle != this.toggle
     item.isDead = true;
     item.isAlive = false;
     this.itemService.updateItem(item).subscribe();
+    this.deadunits.push(item);
   }
 
 }

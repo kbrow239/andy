@@ -2,8 +2,11 @@
 <div class="list-wrapper">
 <h2>Pool:</h2>
 <ul class = "items">
-  <li *ngFor="let item of items">
-    <span class="badge" *ngIf="!item.editing"(click)="edit(item)"><img src={{item.image}}/> <p class=text>{{item.name}}</p>  </span>
+  <li *ngFor="let item of items"[ngClass]="{
+  'is-active': !item.editing,
+  'is-inactive': item.editing}">
+    <span *ngIf="!item.editing"(click)="edit(item)" 
+  ><img src={{item.image}}/> <p class=text>{{item.name}}</p>  </span>
     
   </li>
 </ul>
@@ -11,7 +14,9 @@
 <div class="list-wrapper">
 <h2>Recruited:</h2>
 <ul class = "items">
-<li *ngFor="let item of items">
+<li *ngFor="let item of recruited"  [ngClass]="{
+  'is-active': !item.editing,
+  'is-inactive': item.editing}">
   <span class="badge" *ngIf="item.isAlive"(click)="dead(item)"><img src={{item.image}}/> <p class=text>{{item.name}}</p></span>
 
 </li>
@@ -21,8 +26,8 @@
 <div class="list-wrapper">
 <h2>Graveyard:</h2>
 <ul class = "items">
-<li *ngFor="let item of items">
-  <span class="badge" *ngIf="item.isDead"><img src={{item.image}} class="dead"/> <p class=text>{{item.name}}</p></span>
+<li *ngFor="let dead of deadunits">
+  <span class="badge" *ngIf="dead.isDead"><img src={{dead.image}} class="dead"/> <p class=text>{{dead.name}}</p></span>
 </li>
 </ul>
 </div>
